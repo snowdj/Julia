@@ -1,0 +1,138 @@
+Introduction
+
+Julia's first-class array implementation and high performance make it an ideal language for performing statistical analysis on large data sets. Julia's linreg function make it easy to do simple linear regression on data sets containing one independent variable, but it also performs multiple regression, that is, linear regression for data sets with multiple independent variables.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Linear Regression with Julia}
+\vscpace{-1cm}
+\large
+\begin{itemize}
+Background
+
+The data set we will analyze in this example represents samples of gasoline of various octane ratings. For each sample, the octane rating was measured along with the component makeup in terms of three components, which we will refer to as "component 1", "component 2", and "component 3". We want to model octane rating as a function of the component makeup of gasoline.
+
+Here's a sample of the data:
+
+Index	Component 1 (%)	Component 2 (%)	Component 3 (%)	Condition	Octane Rating
+* data taken from Helmuth Spaeth, Mathematical Algorithms for Linear Regression. Academic Press, 1991.
+1	53.33	1.72	54	1.66219	92.19
+2	59.13	1.2	53	1.58399	92.74
+3	57.39	1.42	55	1.61731	91.88
+4	56.43	1.78	55	1.66228	92.8
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Linear Regression with Julia}
+\vscpace{-1cm}
+\large
+\begin{itemize}
+We want to find the coefficients that satisfy the following relationship:
+
+octane=β1x1+β2x2+β3x3+ϵ
+Where the values for x represent the weight fraction of components 1 through 3, the values for β are constant coefficients, and ϵ represents an error or y-offset term. We can express this more generally:
+
+y=∑βixi+ϵi
+Or in vector form, which is more convenient for translating this expression to Julia:
+
+y=Xβ+ϵ
+Where:
+
+y=⎛⎝⎜⎜⎜⎜y1y2⋮yn⎞⎠⎟⎟⎟⎟,X=⎛⎝⎜⎜⎜⎜xT1xT2⋮xTn⎞⎠⎟⎟⎟⎟=⎛⎝⎜⎜⎜⎜x11x21⋮xn1……⋱…x1px2p⋮xnp⎞⎠⎟⎟⎟⎟,β=⎛⎝⎜⎜β1⋮βp⎞⎠⎟⎟,ϵ=⎛⎝⎜⎜⎜ϵ1ϵ2⋮ϵn⎞⎠⎟⎟⎟
+Referring to the above table, we will treat column 6 as y, and columns 2 — 4 as X.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Linear Regression with Julia}
+\vscpace{-1cm}
+\large
+\begin{itemize}
+Our challenge will be to find a set of coefficients, β, and error terms, ϵ, to minimize the sum of the squares of the residuals, where residual is defined as the difference between the actual y value, and our predicted value, which we will call y^.
+
+The general solution to this problem, using ordinary least squares (the simplest method), is of the form:
+
+β^=(XTX)−1XTy
+Loading the Data
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Linear Regression with Julia}
+\vscpace{-1cm}
+\large
+\begin{itemize}
+Julia has a function that can be used to load CSV files. We will use the readcsv method to read data out of our sample data file and into an array for processing. Let's create a new directory called Gasoline for our project and within it create a file, called main.jl, using Julia Studio.
+
+For this tutorial, we will use the gasoline.csv file:  download the data set and place it in the Gasoline directory.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Linear Regression with Julia}
+\vscpace{-1cm}
+\large
+\begin{itemize}
+To load in the data, we simply call the readcsv function:
+
+data = readcsv("gasoline.csv")
+Now that we have the data loaded into memory, we can get the subranges that represent the slices of data that correspond to x and y. Much like Python and Matlab, Julia allows you to specify ranges within matrices using the : operator. For example, data[1,:] gets all the data in the first row of the matrix. data[:,1] gets all the data in the first column.
+
+# Get the columns that correspond with our X values 
+# and create a new matrix to hold them
+# syntax: data[row, column]
+# to get a whole row do data[row, :]
+# to get a whole column do data[:, column]
+# to get a range of columns do data[:, column_a:column_b]
+ 
+x = data[:, 2:4]
+y = data[:, 6]
+Try printing out these values in the console to confirm that the data has the shape you expect.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Linear Regression with Julia}
+\vscpace{-1cm}
+\large
+\begin{itemize}
+Regression
+
+Now that we have all the data arranged in the form we need it, we can perform linear regression on it.
+
+The syntax for calling linreg is simple: linreg(x_values, y_values, weight_values). All arguments must be Arrays of Floats, and the weight_values argument is optional. This call returns the coefficients of the linear fit.
+
+# Call linreg
+coefs = linreg(x, y)
+Paste the previous commands into the main.jl file, and our final program looks like this:
+
+# in main.jl
+ 
+# Load CSV data
+data = readcsv("gasoline.csv")
+ 
+# Dissect data
+x = data[:, 2:4]
+y = data[:, 6]
+ 
+# Call linreg
+coefs = linreg(x, y)
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Linear Regression with Julia}
+\vscpace{-1cm}
+\large
+\begin{itemize}
+Conclusion
+
+Running the regression produces the following y-offset and coefficients for the three components:
+
+Offset (ϵ)	Component 1 (β1^)	Component 2 (β2^)	Component 3 (β3^)
+102.44000	-0.09526	-0.14831	-0.08314
+If you found this too easy and you're feeling ambitious, try looking at the Generalized Linear Models package and producing similar results.
+
+β^=(XTΩ−1X)−1XTΩ−1y
