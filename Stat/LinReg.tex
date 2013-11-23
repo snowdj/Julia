@@ -31,13 +31,16 @@ Index	Component 1 (%)	Component 2 (%)	Component 3 (%)	Condition	Octane Rating
 \begin{itemize}
 We want to find the coefficients that satisfy the following relationship:
 
-octane=β1x1+β2x2+β3x3+ϵ
-Where the values for x represent the weight fraction of components 1 through 3, the values for β are constant coefficients, and ϵ represents an error or y-offset term. We can express this more generally:
-
-y=∑βixi+ϵi
+\[ octane=\beta_1x1+\beta_2x2+\beta_3x3+\epsilon \]
+Where the values for x represent the weight fraction of components 1 through 3, the values for $\beta$ are 
+constant coefficients, and $\epsilon$ represents an error or y-offset term. We can express this more generally:
+\[
+y=\um \beta_i x_i+\epsilon_i
+\]
 Or in vector form, which is more convenient for translating this expression to Julia:
-
+\[
 y=Xβ+ϵ
+\]
 Where:
 
 y=⎛⎝⎜⎜⎜⎜y1y2⋮yn⎞⎠⎟⎟⎟⎟,X=⎛⎝⎜⎜⎜⎜xT1xT2⋮xTn⎞⎠⎟⎟⎟⎟=⎛⎝⎜⎜⎜⎜x11x21⋮xn1……⋱…x1px2p⋮xnp⎞⎠⎟⎟⎟⎟,β=⎛⎝⎜⎜β1⋮βp⎞⎠⎟⎟,ϵ=⎛⎝⎜⎜⎜ϵ1ϵ2⋮ϵn⎞⎠⎟⎟⎟
@@ -54,7 +57,7 @@ Our challenge will be to find a set of coefficients, β, and error terms, ϵ, to
 
 The general solution to this problem, using ordinary least squares (the simplest method), is of the form:
 
-β^=(XTX)−1XTy
+β^=(XTX)^{−1}XTy
 Loading the Data
 \end{itemize}
 \end{frame}
