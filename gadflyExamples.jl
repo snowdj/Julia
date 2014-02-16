@@ -1,4 +1,3 @@
-
 % From the Julia REPL a reasonably up to data version can be installed with
 
 Pkg.add("Gadfly")
@@ -20,3 +19,8 @@ plot(x=rand(10), y=rand(10), Geom.point, Geom.line)
 plot(x=1:10, y=2.^rand(10),
      Scale.y_sqrt, Geom.point, Geom.smooth,
      Guide.xlabel("Stimulus"), Guide.ylabel("Response"), Guide.title("Dog Training"))
+
+
+using RDatasets
+# E.g.
+plot(data("datasets", "iris"), x="Sepal.Length", y="Sepal.Width", Geom.point)
