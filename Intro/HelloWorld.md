@@ -1,7 +1,9 @@
 Hello, World!
-Congratulations on downloading Julia Studio. If you are new to the language, this is a great place to start. If you're already familiar with the language, this tutorial might also be useful in helping you to get acquainted with the Julia Studio environment.
- Download the code
-Getting Started
+Congratulations on downloading Julia Studio. 
+
+If you are new to the language, this is a great place to start. If you're already familiar with the language, this tutorial might also be useful in helping you to get acquainted with the Julia Studio environment.
+
+#### Getting Started
 You can launch Julia Studio by locating its icon and double clicking. This will open the Julia Studio environment. Once open, you will notice that the IDE has three main tabs.
 The first tab, Welcome, is selected by default when you launch Julia Studio. This tab shows you your most recently opened files for easy access. It also shows a list of sessions. When you exit Julia Studio, a snapshot of your current workspace is stored as a session. To restore the session automatically when you start Julia Studio, select File > Session Manager > Restore last session on startup.
 The Welcome tab also provides quick links for creating and opening files. You can also jump to the Edit tab to browse for files on your file system.
@@ -12,9 +14,13 @@ Let's call this file, hello.jl and place it in any directory. It's good practice
 Editing and Running Files
 The main screen for working with files is the Edit tab. There are a lot of ways to configure this screen based on your preferences, but by default you should see your file system on the left and the active file on the right. Double clicking files in the file system pane will open them in the edit tab. You can choose between open files by selecting from the chooser at the top of the editor pane. Since we just created hello.jl, it should already be open in the main pane.
 Let's enter a command:
-1.	# In hello.jl
-2.	 
-3.	println("Hello, World!")
+
+<pre><code>
+# In hello.jl
+	 
+println("Hello, World!")
+</code></pre>
+
 We are using Julia's println method to log a message to the console. Now we just need to run the file. This can be done by pressing the green run button in the upper right corner. The run button will always run the active file.
 You'll notice that this opens the console automatically. The console's visibility can be toggled by clicking the word "Console" where it appears at the bottom.
  
@@ -28,6 +34,7 @@ To illustrate how to use this command within another file, create another file c
 2.	 
 3.	include("hello.jl")
 If you then run main.jl you should see the output from hello.jl in the console.
-Conclusion
+
+#### Conclusion
 You have now completed the first tutorial, which illustrates how to create files, how to open them, how to log output, and how to load files within the program.
 
