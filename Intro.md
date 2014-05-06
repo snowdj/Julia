@@ -1,23 +1,7 @@
 ulia code feels very familiar
 Text file import
 Although the Julia documentation makes numerous references to MATLAB in terms of code similarity, Julia feels very familiar to me as an R and Python user. Take reading a .csv file into a dataframe and finding the dimensions of the resulting object:
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
+
 #R: Read in 1987.csv from airline dataset into a dataframe
 #No import statement needed to create a dataframe in R
 airline1987 <- read.csv("~/airline/1987.csv")
@@ -39,26 +23,7 @@ view rawjulia_io.jl hosted with ❤ by GitHub
 In each language, the basic syntax is to call a ‘read’ function, specify the .csv filename, then the defaults of the function read in a basic file. I also could’ve specified other keyword arguments, but for purposes of this example I kept it simple.
 Looping
 Looping in Julia is similar to other languages. Python requires proper spacing for each level of a loop, with a colon for each evaluated expression. And although you generally don’t use many loops in R, to do so requires using parenthesis and brackets.
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
+
 #Python looping to create a term-frequency dictionary
  
 from collections import Counter
@@ -82,23 +47,10 @@ end
 view rawjulia-looping.jl hosted with ❤ by GitHub
 If you’re coming from a Python background, you can see that there’s not a ton of difference between Python looping into a dictionary vs. Julia. The biggest differences are the use of the ‘end’ control-flow word and that Julia doesn’t currently have the convenience “Counter” object type. R doesn’t natively have a dictionary type, but you can add a similar concept using the hash package.
 
-Vectorization
+#### Vectorization
 While not required to achieve high performance, Julia also provides the functional programming construct of vectorization and list comprehensions. In R, you use the ‘apply’ family of functions instead of loops in order to apply a function to multiple elements in a list. In Python, there are the ‘map’ and ‘reduce’ functions, but there is also the concept of list comprehensions. In Julia, both of the aforementioned functionalities are possible.
 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
+
 16
 #Cube every number from 1 to 100
  
@@ -130,4 +82,4 @@ Beyond just the written examples though, I’ve found that the budding Julia com
 
 While I haven’t moved to using Julia for my everyday workload, I am getting facility to the point where I’m starting to consider using Julia for selected projects. Once the language matures a bit more, JuliaStudio starts to approach RStudio in terms of functionality, and I get more familiar with the language in general, I can see Julia taking over for at least one if not all of my scientific programming languages.
 
-Share this:
+
