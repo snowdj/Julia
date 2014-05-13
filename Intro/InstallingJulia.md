@@ -16,3 +16,6 @@ Then run the Julia application (double-click on it); a window with a julia> prom
 Pkg.add("IJulia")
 Pkg.add("PyPlot")
 </code></pre>
+
+
+https://github.com/stevengj/julia-mit/
