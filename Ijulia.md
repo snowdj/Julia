@@ -1,5 +1,7 @@
 IJulia
 ===================
+IJulia’s web notebook interface provides a literate programming environment, integrating text, multimedia, code, and programmatically generated output in ways that allow novice and experienced programmers alike to rapidly see the results of tinkering with code.
+
 IJulia is a Julia-language backend combined with the IPython interactive environment. This combination allows you to interact with the Julia language using IPython's powerful graphical notebook, which combines code, formatted text, math, and multimedia in a single document
 
 (This package also includes a prototype Python module to call Julia from Python, including "magics" to call Julia code from within a Python session in IPython.)
