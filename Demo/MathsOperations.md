@@ -15,7 +15,13 @@ julia> rational(0.5185185185185185)
 julia> rational(0.9054054054054054)
 67//74
 </code></pre>
-
+#### Dot products
+Dot products and many other linear-algebra functions are built-in functions in Julia (and are largely implemented by calling functions from LAPACK).
+<pre><code>
+x = [1, 3, -5]
+y = [4, -2, -1]
+z = dot(x, y)
+</code></pre>
 #### Odd and Even Numbers
 
 <pre><code>
