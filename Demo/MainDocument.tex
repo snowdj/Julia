@@ -3,6 +3,7 @@
 %-----------------------------------------------------%
 \section{Introduction}
 
+Julia is a relatively novel language intended for technical computing, basically a direct contender of MATLAB/Octave, Python/scipy/numpy or R. The crucial difference between Julia and the other languages is its powerful JIT compiler, which is responsible for some impressive benchmark results. 
 \subsection{Background}
 
 \subsection{Motivation}
@@ -11,7 +12,8 @@
 
 \subsection{Including Source Files}
 
-You can also run files manually by using Julia's include command. This command can be used in the console or within other files. Including a file evaluates its contents and can be used to modularize your programs by splitting subsets of logic or libraries into individual files. In the console you have to give include the complete absolute path. 
+You can also run files manually by using Julia's include command. This command can be used in the console or within other files. Including a file evaluates its contents and can be used to modularize your programs by splitting subsets of logic or libraries into individual files. 
+In the console you have to give include the complete absolute path. 
 %-----------------------------------------------------%
 \newpage
 \section{Basic Mathematical Operations}
@@ -62,3 +64,7 @@ Loops are very simple with Julia. There are just two kinds, for loops and while 
 %-----------------------------------------------------%
 \newpage
 \section{Writing Functions}
+
+
+\section{Grpahics}
+Julia does not come yet with in-built graphics capabilities, but they are working hard on it and currently provide three different packages: Gaston, a GNUplot wrapper, Winston, a tool that should provide functionality similar to MATLAB and Gadfly, a tool that is intended to be similar to ggplot in R. I only played with Winston and Gadfly. 
