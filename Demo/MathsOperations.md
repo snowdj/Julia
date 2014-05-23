@@ -1,3 +1,22 @@
+
+#### Basic Operations
+<pre><code>
+Arithmetic and functions of vectors and matrices: 
+x * 3, x + 3 multiply/add every element of x by 3 
+x + y element-wise addition of two vectors x and y 
+A*y, A*B product of matrix A and vector y or matrix B 
+x * y not defined for two vectors! 
+x .* y element-wise product of vectors x and y 
+x .^ 3 every element of x is cubed 
+cos(x), cos(A) cosine of every element of x or A 
+exp(A), expm(A) exp of each element of A, matrix exp eA
+ 
+xʹ, Aʹ conjugate-transpose of vector or matrix 
+x’*y, dot(x,y), sum(conj(x).*y) three ways to compute x · y 
+A \ b, inv(A) return solution to Ax=b, or the matrix A–1 
+λ, V = eig(A) eigenvals λ and eigenvectors (columns of V) of A 
+</code></pre>
+
 ####  Complex Arithmetic
 Julia has built-in support for complex arithmetic with arbitrary real types.
 <pre><code>
