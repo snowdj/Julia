@@ -7,5 +7,5 @@ About Julia
 - In addition, the Julia developer community is contributing a number of external packages through Julia’s built-in package manager at a rapid pace. IJulia, a collaboration between the IPython and Julia communities, provides a powerful browser-based graphical notebook interface to Julia.
 
 #### Links
-Download Julia
-Forio’s Julia Studio
+- Download Julia
+- Forio’s Julia Studio
