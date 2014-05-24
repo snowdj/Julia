@@ -1,16 +1,15 @@
 Installing Julia and IJulia
 ============================
-Note: If you have MIT web certificates, you may be able to run IJulia remotely on our cluster, without installing anything, by going to https://ijulia.csail.mit.edu:8000. We are still setting up this server and availability may currently be intermittent, however.
 
-First, install IPython and related scientific-Python packages (SciPy and Matplotlib). 
+#### Python Issues
+- First, install IPython and related scientific-Python packages (SciPy and Matplotlib). 
+- The simplest way to do this on Mac and Windows is by downloading the Anaconda package and running its installer.
 
+*Important: on Windows, the Anaconda installer window gives options Add Anaconda to the System Path and also Register Anaconda as default Python version of the system. Be sure to check these boxes.*
 
-The simplest way to do this on Mac and Windows is by downloading the Anaconda package and running its installer.
-
-Important: on Windows, the Anaconda installer window gives options Add Anaconda to the System Path and also Register Anaconda as default Python version of the system. Be sure to check these boxes.
-Second, download Julia version 0.2 and run the installer. Do not download version 0.1. 
-
-Then run the Julia application (double-click on it); a window with a julia> prompt will appear. At the prompt, type:
+- Second, download the most recent version of Julia. The Installer program makes this very easy.
+- Then run the Julia application (double-click on `julia.cmd`); a window with a julia> prompt will appear. 
+- At the prompt, type:
 
 <pre><code>
 Pkg.add("IJulia")
@@ -21,7 +20,7 @@ Pkg.add("PyPlot")
 https://github.com/stevengj/julia-mit/
 
 <hr>
-roubleshooting:
+Troubleshooting:
 
 If you ran into a problem with the above steps, after fixing the problem you can type Pkg.build() to try to rerun the install scripts.
 If you tried it a while ago, try running Pkg.update() and try again: this will fetch the latest versions of the Julia packages in case the problem you saw was fixed. Run Pkg.build("IJulia") if your Julia version may have changed. If this doesn't work, try just deleting the whole .julia directory in your home directory (on Windows, it is called AppData\Roaming\julia\packages in your home directory) and re-adding the packages.
