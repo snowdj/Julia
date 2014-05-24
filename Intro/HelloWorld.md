@@ -1,9 +1,5 @@
-Hello, World!
+Julia Studio Introduction
 ================================================
-
-#### Julia Studio Introduction 
-*(Forio's Julia Studio)*
-If you are new to the language, this is a great place to start. If you're already familiar with the language, this tutorial might also be useful in helping you to get acquainted with the Julia Studio environment.
 
 #### Getting Started
 - You can launch Julia Studio by locating its icon and double clicking. This will open the Julia Studio environment. Once open, you will notice that the IDE has three main tabs.
@@ -20,8 +16,7 @@ If you are new to the language, this is a great place to start. If you're alread
 - It's good practice to create one location for all your julia files and call it, "julia". Finally, confirm your settings.
 
 #### Editing and Running Files
-The main screen for working with files is the Edit tab. There are a lot of ways to configure this screen based on your preferences, but by default you should see your file system on the left and the active file on the right. Double clicking files in the file system pane will open them in the edit tab. You can choose between open files by selecting from the chooser at the top of the editor pane. Since we just created hello.jl, it should already be open in the main pane.
-Let's enter a command:
+The main screen for working with files is the Edit tab. There are a lot of ways to configure this screen based on your preferences, but by default you should see your file system on the left and the active file on the right. Double clicking files in the file system pane will open them in the edit tab. You can choose between open files by selecting from the chooser at the top of the editor pane. Since we just created `hello.jl`, it should already be open in the main pane.
 
 <pre><code>
 # In hello.jl
@@ -29,19 +24,24 @@ Let's enter a command:
 println("Hello, World!")
 </code></pre>
 
-We are using Julia's println method to log a message to the console. Now we just need to run the file. This can be done by pressing the green run button in the upper right corner. The run button will always run the active file.
+We are using Julia's `println` method to log a message to the console. Now we just need to run the file. This can be done by pressing the green run button in the upper right corner. The run button will always run the active file.
 You'll notice that this opens the console automatically. The console's visibility can be toggled by clicking the word "Console" where it appears at the bottom.
  
-You can also run files manually by using Julia's include command. This command can be used in the console or within other files. Including a file evaluates its contents and can be used to modularize your programs by splitting subsets of logic or libraries into individual files. In the console you have to giveinclude the complete absolute path. This is made easy by right-clicking on the file name in the file system panel and choosing "Copy absolute path" and then pasting it in the console with Ctrl-V
-1.	# In the console
-2.	 
-3.	include("/yourDirectory/hello.jl")
+You can also run files manually by using Julia's include command. This command can be used in the console or within other files. Including a file evaluates its contents and can be used to modularize your programs by splitting subsets of logic or libraries into individual files. 
+In the console you have to giveinclude the complete absolute path. This is made easy by right-clicking on the file name in the file system panel and choosing "Copy absolute path" and then pasting it in the console with Ctrl-V
+<pre><code>
+# In the console
+	 
+include("/yourDirectory/hello.jl")
+</code></pre>
 When you run this command you should see output in your console.
 To illustrate how to use this command within another file, create another file called main.jl and add:
-1.	# In main.jl
-2.	 
-3.	include("hello.jl")
-If you then run main.jl you should see the output from hello.jl in the console.
+<pre><code>
+# In main.jl
+ 
+include("hello.jl")
+</code></pre>
+If you then run `main.jl` you should see the output from hello.jl in the console.
 
 #### Conclusion
 You have now completed the first tutorial, which illustrates how to create files, how to open them, how to log output, and how to load files within the program.
