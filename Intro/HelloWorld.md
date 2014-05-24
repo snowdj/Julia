@@ -43,6 +43,3 @@ include("hello.jl")
 </code></pre>
 If you then run `main.jl` you should see the output from hello.jl in the console.
 
-#### Conclusion
-You have now completed the first tutorial, which illustrates how to create files, how to open them, how to log output, and how to load files within the program.
-
