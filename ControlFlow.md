@@ -1,12 +1,12 @@
-####################################################
-## 3. Control Flow
-####################################################
+Control Flow
+==================
 
-# Let's make a variable
+- Here is an if statement. 
+- Indentation is NOT meaningful in Julia.
+- prints "some var is smaller than 10"
+<pre><code>
 some_var = 5
 
-# Here is an if statement. Indentation is NOT meaningful in Julia.
-# prints "some var is smaller than 10"
 if some_var > 10
     println("some_var is totally bigger than 10.")
 elseif some_var < 10    # This elseif clause is optional.
@@ -14,10 +14,11 @@ elseif some_var < 10    # This elseif clause is optional.
 else                    # The else clause is optional too.
     println("some_var is indeed 10.")
 end
+</code></pre>
 
-
-# For loops iterate over iterables, such as ranges, lists, sets, dicts, strings.
-
+#### For loops 
+- iterate over iterables, such as ranges, lists, sets, dicts, strings.
+<pre><code>
 for animal=["dog", "cat", "mouse"]
     # You can use $ to interpolate into strings
     println("$animal is a mammal")
@@ -26,8 +27,10 @@ end
 #    dog is a mammal
 #    cat is a mammal
 #    mouse is a mammal
+</code></pre>
 
-# You can use in instead of =, if you want.
+- You can use `in` instead of =, should you wish.
+<pre><code>
 for animal in ["dog", "cat", "mouse"]
     println("$animal is a mammal")
 end
@@ -39,7 +42,7 @@ end
 for (k,v) in ["dog"=>"mammal","cat"=>"mammal","mouse"=>"mammal"]
     println("$k is $v")
 end
-
+</code></pre>
 
 # While loops go until a condition is no longer met.
 # prints:
