@@ -1,5 +1,43 @@
 Introduction to Julia
 =================================
+00 What is Julia
+
+00.1 Background
+00.2 Installing Julia
+00.3 Julia Studio and iJulia Notebooks
+00.4 Some Important Terminology and Performance Issues
+00.5 GitHub
+
+
+01 Some Basic Operations
+01.1 Mathematical Operations
+01.2 Matrix Operations 
+
+
+02 Programming Control Statements
+02.1 For loops
+02.2 While Loops
+02.3 If Else
+02.4 Other Programming Control Statements
+02.5 The Fizz Buzz Test with Julia
+
+04 Types
+04.4 BigInt
+
+05 Map Reduce
+05.1 What is Map Reduce
+
+06 Graphics with Julia
+06.1 Winston Package
+06.2 Gadfly Package
+
+07 Project Euler Exercises
+07.1 
+07.1 
+
+
+
+
 #### Text file import
 Reading a .csv file into a dataframe and finding the dimensions of the resulting object:
 
