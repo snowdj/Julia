@@ -1,7 +1,12 @@
 Introduction to Julia
 =================================
-00 What is Julia
+### 00 What is Julia
 
+
+Julia is a new homoiconic functional language focused on technical computing. While having the full 
+power of homoiconic macros, first-class functions, and low-level control, Julia is as easy to learn and use as Python.
+
+<hr>
 00.1 Background
 00.2 Installing Julia
 00.3 Julia Studio and iJulia Notebooks
@@ -9,7 +14,7 @@ Introduction to Julia
 00.5 GitHub
 
 
-01 Some Basic Operations
+### 01 Some Basic Operations
 01.1 Mathematical Operations
 01.2 Matrix Operations 
 
